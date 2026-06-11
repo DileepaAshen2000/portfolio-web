@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionWrapper, { SectionHeader } from "../SectionWrapper";
+import { SiNextdotjs, SiFlutter, SiVite, SiCanva, SiDavinciresolve, SiExpress, SiSpringboot, SiHostinger } from "react-icons/si";
 
 interface Skill {
   name: string;
@@ -24,11 +25,13 @@ const skillGroups: SkillGroup[] = [
     color: "#8B5CF6", // Purple accent
     skills: [
       { name: "React", icon: "fa-brands fa-react" },
-      { name: "Angular", icon: "fa-brands fa-angular" },
       { name: "JavaScript", icon: "fa-brands fa-js" },
       { name: "HTML5", icon: "fa-brands fa-html5" },
       { name: "CSS3", icon: "fa-brands fa-css3-alt" },
-      { name: "Unity", icon: "fa-brands fa-unity" },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Flutter", icon: <SiFlutter /> },
+      { name: "Vite", icon: <SiVite /> },
+      { name: "Vue", icon: "fa-brands fa-vuejs" },
     ],
   },
   {
@@ -40,8 +43,10 @@ const skillGroups: SkillGroup[] = [
       { name: "Photoshop", icon: "Ps" },
       { name: "Illustrator", icon: "Ai" },
       { name: "Adobe XD", icon: "Xd" },
-      { name: "InDesign", icon: "Id" },
       { name: "Premiere Pro", icon: "Pr" },
+      { name: "Figma", icon: "fa-brands fa-figma" },
+      { name: "Canva", icon: <SiCanva /> },
+      { name: "DaVinci Resolve", icon: <SiDavinciresolve /> },
     ],
   },
   {
@@ -53,11 +58,8 @@ const skillGroups: SkillGroup[] = [
       { name: "Node.js", icon: "fa-brands fa-node-js" },
       { name: "Python", icon: "fa-brands fa-python" },
       { name: "Java", icon: "fa-brands fa-java" },
-      { name: "PHP", icon: "fa-brands fa-php" },
-      { name: ".NET", icon: "fa-brands fa-microsoft" },
-      { name: "WordPress", icon: "fa-brands fa-wordpress" },
-      { name: "Ghost", icon: "fa-solid fa-ghost" },
-      { name: "Meta", icon: "fa-brands fa-meta" },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> },
     ],
   },
   {
@@ -67,14 +69,12 @@ const skillGroups: SkillGroup[] = [
     color: "#3B82F6", // Blue accent
     skills: [
       { name: "AWS", icon: "fa-brands fa-aws" },
-      { name: "Azure", icon: "fa-brands fa-microsoft" },
-      { name: "Google Cloud", icon: "fa-brands fa-google" },
-      { name: "DigitalOcean", icon: "fa-brands fa-digital-ocean" },
       { name: "Docker", icon: "fa-brands fa-docker" },
       { name: "MongoDB", icon: "fa-solid fa-leaf" },
       { name: "MySQL", icon: "fa-solid fa-database" },
       { name: "MSSQL", icon: "fa-solid fa-database" },
-      { name: "Cloudflare", icon: "fa-brands fa-cloudflare" },
+      { name: "Firebase", icon: "fa-solid fa-fire" },
+      { name: "Hostinger", icon: <SiHostinger /> },
     ],
   },
 ];
@@ -140,13 +140,19 @@ export default function SkillsSection() {
                     viewport={{ once: true }}
                     transition={{ delay: gi * 0.1 + si * 0.05 + 0.3 }}
                   >
-                    {typeof skill.icon === "string" && skill.icon.startsWith("fa-") ? (
-                      <i
-                        className={`${skill.icon} text-sm`}
-                        style={{ color: "#94A3B8" }}
-                      />
+                    {typeof skill.icon === "string" ? (
+                      skill.icon.startsWith("fa-") ? (
+                        <i
+                          className={`${skill.icon} text-sm`}
+                          style={{ color: "#94A3B8" }}
+                        />
+                      ) : (
+                        <span className="text-[10px] font-bold bg-white/10 px-1.5 py-0.5 rounded text-text-muted" style={{ fontFamily: "var(--font-heading)" }}>
+                          {skill.icon}
+                        </span>
+                      )
                     ) : (
-                      <span className="text-[10px] font-bold bg-white/10 px-1.5 py-0.5 rounded text-text-muted" style={{ fontFamily: "var(--font-heading)" }}>
+                      <span className="text-sm flex items-center justify-center" style={{ color: "#94A3B8" }}>
                         {skill.icon}
                       </span>
                     )}

@@ -41,11 +41,11 @@ export default function Footer() {
               },
               {
                 icon: "fa-brands fa-linkedin-in",
-                href: "https://linkedin.com/in/dileepa-ashen",
+                href: "https://www.linkedin.com/in/dileepa-ashen-179534270/",
               },
               {
                 icon: "fa-brands fa-medium",
-                href: "https://medium.com/@ashen",
+                href: "https://medium.com/@dileepaashen81",
               },
               {
                 icon: "fa-solid fa-envelope",

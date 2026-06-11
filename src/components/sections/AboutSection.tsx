@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: "fa-solid fa-graduation-cap",
     title: "University of Moratuwa",
-    desc: "B.Sc (Hons) IT — GPA 3.62, Dean's List",
+    desc: "B.Sc (Hons) Information Technology",
     color: "#00D9FF",
   },
   {
@@ -54,7 +54,7 @@ export default function AboutSection() {
                 className="text-base leading-[1.85] text-text-secondary"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                I&apos;m a Software Engineering undergraduate at the{" "}
+                Skilled Software Engineering undergraduate at the{" "}
                 <span className="text-text-primary font-medium">
                   University of Moratuwa
                 </span>
@@ -156,7 +156,7 @@ export default function AboutSection() {
               </motion.div>
             ))}
 
-            {/* Education detail card */}
+            {/* Education detail card
             <motion.div
               className="sm:col-span-2 glass-card rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
@@ -235,7 +235,7 @@ export default function AboutSection() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

@@ -12,6 +12,7 @@ interface Project {
   technologies: string[];
   github?: string;
   live?: string;
+  playStore?: string;
   color: string;
   icon: string;
   period: string;
@@ -27,8 +28,10 @@ const projects: Project[] = [
       "Built a full-stack EV charging ecosystem with mobile app, admin panel, and web platform integrating 60kW chargers, OCPP protocol, real-time availability, payment gateway, and comprehensive API backend.",
     impact:
       "Pioneered digital EV infrastructure management for Sri Lanka's emerging electric vehicle market.",
-    technologies: ["React", "Node.js", "Firebase", "Flutter", "OCPP", "REST API"],
+    technologies: ["React", "Node.js", "Firebase", "Flutter", "OCPP", "REST API","PayHere","MySQL"],
     github: "https://github.com/DileepaAshen2000",
+    live: "https://www.lankaevplus.com/",
+    playStore: "https://play.google.com/store/apps/details?id=com.lankaevplus.app",
     color: "#00D9FF",
     icon: "fa-solid fa-charging-station",
     period: "Oct 2025 - Apr 2026",
@@ -42,8 +45,8 @@ const projects: Project[] = [
       "Developed a machine learning-based system leveraging contextual understanding with transformer models and trend analysis for improved classification accuracy.",
     impact:
       "Advanced the state of Sinhala NLP research with a novel approach to contextual hate speech detection.",
-    technologies: ["Python", "ML/NLP", "Transformers", "Data Analysis"],
-    github: "https://github.com/DileepaAshen2000",
+    technologies: ["Python", "ML/NLP", "Transformers", "Data Analysis","Deep Learning"],
+    // github: "https://github.com/DileepaAshen2000",
     color: "#6C63FF",
     icon: "fa-solid fa-brain",
     period: "Final Year Research",
@@ -57,8 +60,9 @@ const projects: Project[] = [
       "Contributed to developing the official website and admin panel with content management, user admin, secure authentication, and optimized system performance.",
     impact:
       "Enhanced organizational digital presence with streamlined content and user management.",
-    technologies: ["React", "Node.js", "Firebase", "JWT"],
-    github: "https://github.com/DileepaAshen2000",
+    technologies: ["Next.js", "Node.js", "Firebase", "Tailwind CSS"],
+    github: "https://github.com/A-Peak-strategy/mensa-web",
+    live: "https://mensa.lk/",
     color: "#8B5CF6",
     icon: "fa-solid fa-globe",
     period: "Team Project - 2025",
@@ -72,8 +76,8 @@ const projects: Project[] = [
       "Developed core inventory features including stock-in/out, adjustments, dashboard analytics, password recovery, and efficient data handling workflows.",
     impact:
       "Streamlined inventory operations with real-time tracking, secure access, and actionable analytics.",
-    technologies: ["React", "Node.js", "MySQL", "Express.js"],
-    github: "https://github.com/DileepaAshen2000",
+    technologies: ["React", "Spring Boot", "MySQL", "Material UI","JWT","Tailwind CSS"],
+    github: "https://github.com/DileepaAshen2000/centralSyncFrontend",
     color: "#3B82F6",
     icon: "fa-solid fa-boxes-stacked",
     period: "Level 2 - Rootcode 2024",
@@ -87,8 +91,8 @@ const projects: Project[] = [
       "Built a full web application to manage solar product listings, payment processing, and administrative operations with a user-friendly interface.",
     impact:
       "Improved product visibility, transaction handling, and overall business efficiency for solar energy providers.",
-    technologies: ["React", "Node.js", "Firebase", "REST API"],
-    github: "https://github.com/DileepaAshen2000",
+    technologies: ["React", "Node.js", "Firebase","MySQL","Tailwind CSS","PayHere", "REST API"],
+    github: "https://github.com/A-Peak-strategy/green-light-solar-web",
     color: "#10B981",
     icon: "fa-solid fa-solar-panel",
     period: "Team Project (Ongoing)",
@@ -229,7 +233,7 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Links */}
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+                <div className="flex items-center flex-wrap gap-4 pt-4 border-t border-white/5">
                   {project.github && (
                     <a
                       href={project.github}
@@ -239,7 +243,7 @@ export default function ProjectsSection() {
                       style={{ fontFamily: "var(--font-body)" }}
                     >
                       <i className="fa-brands fa-github text-xs" />
-                      Source Code
+                      Source
                     </a>
                   )}
                   {project.live && (
@@ -250,8 +254,20 @@ export default function ProjectsSection() {
                       className="flex items-center gap-2 text-sm text-text-muted hover:text-accent-cyan transition-colors"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
-                      <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
-                      Live Demo
+                      <i className="fa-solid fa-globe text-xs" />
+                      Website
+                    </a>
+                  )}
+                  {project.playStore && (
+                    <a
+                      href={project.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-text-muted hover:text-accent-cyan transition-colors"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      <i className="fa-brands fa-google-play text-xs" />
+                      Play Store
                     </a>
                   )}
                 </div>

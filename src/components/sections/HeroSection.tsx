@@ -11,12 +11,12 @@ const socials = [
   },
   {
     icon: "fa-brands fa-linkedin-in",
-    href: "https://linkedin.com/in/dileepa-ashen",
+    href: "https://www.linkedin.com/in/dileepa-ashen-179534270/",
     label: "LinkedIn",
   },
   {
     icon: "fa-brands fa-medium",
-    href: "https://medium.com/@ashen",
+    href: "https://medium.com/@dileepaashen81",
     label: "Medium",
   },
   {
@@ -27,7 +27,6 @@ const socials = [
 ];
 
 const stats = [
-  { value: "3.62", label: "GPA" },
   { value: "5+", label: "Projects" },
   { value: "1+", label: "Year Exp" },
 ];
@@ -258,7 +257,7 @@ export default function HeroSection() {
                       className="text-xs text-accent-cyan/70 uppercase tracking-widest"
                       style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}
                     >
-                      Cosmic Systems Engineer
+                      Full Stack Developer
                     </div>
                   </div>
                 </div>
