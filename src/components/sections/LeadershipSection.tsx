@@ -149,7 +149,7 @@ export default function LeadershipSection() {
           ))}
         </div>
 
-        {/* Soft Skills */}
+        {/* Soft Skills
         <motion.div
           className="glass-card rounded-2xl p-6 md:p-8"
           initial={{ opacity: 0, y: 20 }}
@@ -183,7 +183,7 @@ export default function LeadershipSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </SectionWrapper>
   );

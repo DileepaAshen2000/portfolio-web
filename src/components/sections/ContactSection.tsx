@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import SectionWrapper, { SectionHeader } from "../SectionWrapper";
 
 const contactLinks = [
@@ -16,7 +17,7 @@ const contactLinks = [
     icon: "fa-brands fa-linkedin-in",
     label: "LinkedIn",
     value: "dileepa-ashen",
-    href: "https://linkedin.com/in/dileepa-ashen",
+    href: "https://www.linkedin.com/in/dileepa-ashen-179534270/",
     color: "#6C63FF",
   },
   {
@@ -30,7 +31,7 @@ const contactLinks = [
     icon: "fa-brands fa-medium",
     label: "Medium",
     value: "@ashen",
-    href: "https://medium.com/@ashen",
+    href: "https://medium.com/@dileepaashen81",
     color: "#3B82F6",
   },
 ];
@@ -50,13 +51,28 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus("sending");
 
-    // Simulate sending (replace with actual emailjs or API call)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // The destination email is passed in the template parameters
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_id_here",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_id_here",
+        {
+          from_name: formState.name,
+          to_name: "Dileepa Ashen",
+          from_email: formState.email,
+          subject: formState.subject,
+          message: formState.message,
+          reply_to: formState.email,
+          to_email: "dileepaa341@gmail.com",
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "public_key_here"
+      );
+
       setStatus("sent");
       setFormState({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setStatus("idle"), 4000);
-    } catch {
+    } catch (error) {
+      console.error("Failed to send email:", error);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
     }
