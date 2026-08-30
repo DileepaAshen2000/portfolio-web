@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dileepa Ashen | Software Engineer & Full-Stack Developer",
+  title: "Ashen Edussuriya | Software Engineer & Full-Stack Developer",
   description:
-    "Cosmic Systems Engineer — Designing and building impactful digital systems inspired by mathematics, astrophysics, and the complexity of the universe. University of Moratuwa undergraduate, full-stack developer, and startup co-founder.",
+    "Software Engineer — Designing and building scalable, high-performance digital systems. University of Moratuwa undergraduate, full-stack developer, and startup co-founder.",
   keywords: [
-    "Dileepa Ashen",
+    "Ashen Edussuriya",
     "Software Engineer",
     "Full-Stack Developer",
     "React",
@@ -15,19 +15,19 @@ export const metadata: Metadata = {
     "University of Moratuwa",
     "Portfolio",
   ],
-  authors: [{ name: "Dileepa Ashen" }],
+  authors: [{ name: "Ashen Edussuriya" }],
   openGraph: {
-    title: "Dileepa Ashen | Software Engineer & Full-Stack Developer",
+    title: "Ashen Edussuriya | Software Engineer & Full-Stack Developer",
     description:
-      "Cosmic Systems Engineer — Building impactful digital systems at the intersection of engineering and scientific curiosity.",
+      "Software Engineer — Building impactful digital systems with a focus on scalable architecture and seamless user experiences.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dileepa Ashen | Software Engineer",
+    title: "Ashen Edussuriya | Software Engineer",
     description:
-      "Cosmic Systems Engineer — Building impactful digital systems.",
+      "Software Engineer — Building impactful digital systems.",
   },
   robots: {
     index: true,

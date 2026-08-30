@@ -58,7 +58,7 @@ export default function ContactSection() {
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_id_here",
         {
           from_name: formState.name,
-          to_name: "Dileepa Ashen",
+          to_name: "Ashen Edussuriya",
           from_email: formState.email,
           subject: formState.subject,
           message: formState.message,

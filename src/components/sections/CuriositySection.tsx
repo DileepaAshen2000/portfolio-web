@@ -7,18 +7,18 @@ const interests = [
   {
     title: "Mathematics",
     description:
-      "From linear algebra to number theory — mathematics is the language I use to understand patterns in code and the universe.",
+      "From discrete mathematics to algorithmic analysis — mathematics is the foundation I use to understand complex logic and optimize code.",
     icon: "fa-solid fa-square-root-variable",
     color: "#00D9FF",
     topics: ["Linear Algebra", "Calculus", "Number Theory", "Graph Theory"],
   },
   {
-    title: "Astrophysics",
+    title: "Software Architecture",
     description:
-      "The cosmos inspires my engineering philosophy — building systems that are scalable, elegant, and capable of handling immense complexity.",
-    icon: "fa-solid fa-meteor",
+      "Designing systems that are robust, scalable, and capable of handling complexity while maintaining clean code principles.",
+    icon: "fa-solid fa-sitemap",
     color: "#6C63FF",
-    topics: ["Cosmology", "Orbital Mechanics", "Stellar Evolution", "Space-Time"],
+    topics: ["Microservices", "System Design", "Scalability", "Clean Code"],
   },
   {
     title: "Scientific Thinking",

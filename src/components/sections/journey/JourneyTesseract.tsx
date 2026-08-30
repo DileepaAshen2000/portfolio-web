@@ -55,7 +55,7 @@ function SectionHeader() {
         <span className="text-text-primary">Get Ready to </span>
         <span className="gradient-text">Time Travel</span>
         <br />
-        <span className="text-text-primary">Through My Journey</span>
+        {/* <span className="text-text-primary">Through My Journey</span> */}
       </h2>
 
       {/* Subheading */}
@@ -63,7 +63,7 @@ function SectionHeader() {
         className="text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed text-text-muted"
         style={{ fontFamily: "var(--font-body)" }}
       >
-        In this universe, time behaves as a{" "}
+        In this journey, every experience serves as a{" "}
         <span className="text-accent-cyan/80 font-medium">
           physical dimension
         </span>
@@ -144,7 +144,8 @@ export default function JourneyTesseract() {
     };
   }, []);
 
-  return (
+  // Hidden as per request
+  return false ? (
     <section id="journey" className="relative z-10 py-12 md:py-20">
       {/* Header */}
       <SectionHeader />
@@ -205,5 +206,5 @@ export default function JourneyTesseract() {
         </div>
       </div>
     </section>
-  );
+  ) : null;
 }

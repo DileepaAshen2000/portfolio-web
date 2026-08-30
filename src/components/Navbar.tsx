@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Journey", href: "#journey" },
+  // { label: "Journey", href: "#journey" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
@@ -91,7 +91,7 @@ export default function Navbar() {
                 className="text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors hidden sm:block"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Dileepa Ashen
+                Ashen Edussuriya
               </span>
             </a>
 

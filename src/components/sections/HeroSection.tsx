@@ -27,7 +27,7 @@ const socials = [
 ];
 
 const stats = [
-  { value: "5+", label: "Projects" },
+  { value: "10+", label: "Projects" },
   { value: "1+", label: "Year Exp" },
 ];
 
@@ -89,9 +89,9 @@ export default function HeroSection() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              <span className="text-text-primary">Dileepa</span>
+              <span className="text-text-primary">Ashen</span>
               <br />
-              <span className="gradient-text">Ashen</span>
+              <span className="gradient-text">Edussuriya</span>
             </h1>
 
             {/* Title */}
@@ -109,8 +109,8 @@ export default function HeroSection() {
               className="text-sm md:text-base text-text-muted max-w-lg leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Engineering impactful digital systems inspired by mathematics, 
-              astrophysics, and the complexity of the universe.
+              Engineering scalable, high-performance digital systems with a strong 
+              focus on clean architecture and seamless user experiences.
             </p>
 
             {/* CTA Buttons */}
@@ -242,7 +242,7 @@ export default function HeroSection() {
                 <div className="relative w-64 h-80 md:w-72 md:h-88 lg:w-80 lg:h-96 rounded-2xl overflow-hidden">
                   <Image
                     src="/me.png"
-                    alt="Dileepa Ashen - Software Engineer"
+                    alt="Ashen Edussuriya - Software Engineer"
                     fill
                     className="object-cover object-top"
                     priority

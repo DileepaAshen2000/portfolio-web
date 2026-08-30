@@ -85,8 +85,8 @@ export default function SkillsSection() {
       <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32 mx-auto">
         <SectionHeader
           label="Skills"
-          title="Technical Constellation"
-          subtitle="Technologies and tools that power my digital universe."
+          title="Tech Stack"
+          subtitle="Technologies and tools that power my digital solutions."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
