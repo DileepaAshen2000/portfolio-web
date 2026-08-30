@@ -28,7 +28,7 @@ export default function Footer() {
               className="text-xs text-text-muted"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              © {currentYear} Dileepa Ashen. Engineered with precision.
+              © {currentYear} Ashen Edussuriya. Engineered with precision.
             </p>
           </motion.div>
 

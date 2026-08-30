@@ -37,7 +37,7 @@ export default function AboutSection() {
         <SectionHeader
           label="About"
           title="The Engineer Behind the Code"
-          subtitle="Driven by curiosity, powered by logic, and inspired by the universe."
+          subtitle="Driven by curiosity, powered by logic, and committed to engineering excellence."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -61,10 +61,9 @@ export default function AboutSection() {
                 , passionate about building impactful digital systems that solve
                 real-world problems. My journey in tech is deeply rooted in a
                 fascination with{" "}
-                <span className="text-accent-cyan/80">mathematics</span> and{" "}
-                <span className="text-accent-indigo/80">astrophysics</span> —
-                disciplines that teach us to think in systems, patterns, and
-                first principles.
+                fascination with <span className="text-accent-cyan/80">software architecture</span> and{" "}
+                <span className="text-accent-indigo/80">system design</span> —
+                disciplines that teach us to build solutions that are robust, scalable, and efficient.
               </p>
               <p
                 className="text-base leading-[1.85] text-text-secondary mt-4"
@@ -101,8 +100,8 @@ export default function AboutSection() {
                 className="text-sm italic text-text-muted leading-relaxed"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                &ldquo;The universe is under no obligation to make sense to you
-                — but code should be.&rdquo;
+                &ldquo;Any fool can write code that a computer can understand. 
+                Good programmers write code that humans can understand.&rdquo;
               </p>
               <p
                 className="text-xs text-accent-cyan/50 mt-2"
