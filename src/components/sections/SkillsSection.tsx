@@ -1,174 +1,116 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionWrapper, { SectionHeader } from "../SectionWrapper";
-import { SiNextdotjs, SiFlutter, SiVite, SiCanva, SiDavinciresolve, SiExpress, SiSpringboot, SiHostinger } from "react-icons/si";
+import type { ReactNode } from "react";
+import { SiCanva, SiDavinciresolve, SiExpress, SiFlutter, SiHostinger, SiNextdotjs, SiSpringboot, SiVite } from "react-icons/si";
 
-interface Skill {
-  name: string;
-  icon: string | React.ReactNode;
-}
-
-interface SkillGroup {
-  category: string;
-  description: string;
-  icon: string;
-  color: string;
-  skills: Skill[];
-}
+interface Skill { name: string; icon: string | ReactNode }
+interface SkillGroup { category: string; description: string; icon: string; skills: Skill[] }
 
 const skillGroups: SkillGroup[] = [
   {
-    category: "Frontend & Mobile",
-    description: "Building immersive user experiences",
-    icon: "fa-solid fa-code",
-    color: "#8B5CF6", // Purple accent
+    category: "Languages", description: "Core programming languages", icon: "fa-solid fa-code",
     skills: [
-      { name: "React", icon: "fa-brands fa-react" },
-      { name: "JavaScript", icon: "fa-brands fa-js" },
-      { name: "HTML5", icon: "fa-brands fa-html5" },
+      { name: "JavaScript", icon: "fa-brands fa-js" }, { name: "Python", icon: "fa-brands fa-python" },
+      { name: "Java", icon: "fa-brands fa-java" }, { name: "HTML5", icon: "fa-brands fa-html5" },
       { name: "CSS3", icon: "fa-brands fa-css3-alt" },
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "Flutter", icon: <SiFlutter /> },
-      { name: "Vite", icon: <SiVite /> },
-      { name: "Vue", icon: "fa-brands fa-vuejs" },
     ],
   },
   {
-    category: "UI/UX Design",
-    description: "Crafting visual perfection",
-    icon: "fa-solid fa-paintbrush",
-    color: "#6C63FF", // Indigo accent
+    category: "Frontend", description: "Building interactive interfaces", icon: "fa-brands fa-react",
     skills: [
-      { name: "Photoshop", icon: "Ps" },
-      { name: "Illustrator", icon: "Ai" },
-      { name: "Adobe XD", icon: "Xd" },
-      { name: "Premiere Pro", icon: "Pr" },
-      { name: "Figma", icon: "fa-brands fa-figma" },
-      { name: "Canva", icon: <SiCanva /> },
-      { name: "DaVinci Resolve", icon: <SiDavinciresolve /> },
+      { name: "React", icon: "fa-brands fa-react" }, { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Vue", icon: "fa-brands fa-vuejs" }, { name: "Vite", icon: <SiVite /> },
     ],
   },
   {
-    category: "Backend & Core",
-    description: "Robust and scalable architecture",
-    icon: "fa-solid fa-server",
-    color: "#F59E0B", // Amber accent
+    category: "Backend", description: "Server-side development", icon: "fa-solid fa-cube",
     skills: [
-      { name: "Node.js", icon: "fa-brands fa-node-js" },
-      { name: "Python", icon: "fa-brands fa-python" },
-      { name: "Java", icon: "fa-brands fa-java" },
-      { name: "Express.js", icon: <SiExpress /> },
+      { name: "Node.js", icon: "fa-brands fa-node-js" }, { name: "Express.js", icon: <SiExpress /> },
       { name: "Spring Boot", icon: <SiSpringboot /> },
     ],
   },
   {
-    category: "Cloud & DevOps",
-    description: "Deploying at global scale",
-    icon: "fa-solid fa-cloud",
-    color: "#3B82F6", // Blue accent
+    category: "Database", description: "Data storage solutions", icon: "fa-solid fa-database",
     skills: [
-      { name: "AWS", icon: "fa-brands fa-aws" },
-      { name: "Docker", icon: "fa-brands fa-docker" },
-      { name: "MongoDB", icon: "fa-solid fa-leaf" },
-      { name: "MySQL", icon: "fa-solid fa-database" },
-      { name: "MSSQL", icon: "fa-solid fa-database" },
-      { name: "Firebase", icon: "fa-solid fa-fire" },
+      { name: "MongoDB", icon: "fa-solid fa-leaf" }, { name: "Firebase", icon: "fa-solid fa-fire" },
+      { name: "MySQL", icon: "fa-solid fa-database" }, { name: "MSSQL", icon: "fa-solid fa-database" },
+    ],
+  },
+  {
+    category: "Mobile", description: "Cross-platform development", icon: "fa-solid fa-mobile-screen-button",
+    skills: [{ name: "Flutter", icon: <SiFlutter /> }, { name: "Firebase", icon: "fa-solid fa-fire" }],
+  },
+  {
+    category: "Cloud & DevOps", description: "Deploy and scale with confidence", icon: "fa-solid fa-cloud",
+    skills: [
+      { name: "AWS", icon: "fa-brands fa-aws" }, { name: "Docker", icon: "fa-brands fa-docker" },
       { name: "Hostinger", icon: <SiHostinger /> },
+    ],
+  },
+  {
+    category: "Design", description: "Visual design and prototyping", icon: "fa-solid fa-pen-ruler",
+    skills: [
+      { name: "Figma", icon: "fa-brands fa-figma" }, { name: "Photoshop", icon: "Ps" },
+      { name: "Illustrator", icon: "Ai" }, { name: "Adobe XD", icon: "Xd" }, { name: "Canva", icon: <SiCanva /> },
+    ],
+  },
+  {
+    category: "Media Tools", description: "Creative production tools", icon: "fa-solid fa-photo-film",
+    skills: [
+      { name: "Premiere Pro", icon: "Pr" }, { name: "DaVinci Resolve", icon: <SiDavinciresolve /> },
     ],
   },
 ];
 
+function SkillIcon({ icon }: { icon: Skill["icon"] }) {
+  if (typeof icon !== "string") return <span className="skill-brand-icon">{icon}</span>;
+  if (icon.startsWith("fa-")) return <i className={icon} />;
+  return <span className="skill-letter-icon">{icon}</span>;
+}
+
 export default function SkillsSection() {
   return (
-    <SectionWrapper id="skills" className="py-24 md:py-32">
-      <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32 mx-auto">
-        <SectionHeader
-          label="Skills"
-          title="Tech Stack"
-          subtitle="Technologies and tools that power my digital solutions."
-        />
+    <section
+      id="skills"
+      className="skills-section skills-section-light"
+      style={{ backgroundColor: "#f3eee8", color: "#111111" }}
+    >
+      <div className="skills-background" aria-hidden="true">
+        <div className="skills-asterisk"><i /><i /><i /></div>
+        <div className="skills-dots" />
+      </div>
+      <div className="portfolio-container skills-content">
+        <motion.header className="skills-heading" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <span className="portfolio-eyebrow">Skills</span>
+          <h2>Technologies<br />I work with</h2>
+          <p>I use modern technologies and tools to build scalable, high-performance, and user-friendly applications.</p>
+          <i className="about-rule" aria-hidden="true" />
+        </motion.header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {skillGroups.map((group, gi) => (
-            <motion.div
-              key={group.category}
-              className="glass-card glass-card-hover rounded-2xl p-6 md:p-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: gi * 0.1 }}
-            >
-              {/* Category header */}
-              <div className="flex items-start gap-4 mb-8">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                  style={{
-                    background: `${group.color}15`,
-                    border: `1px solid ${group.color}30`,
-                  }}
-                >
-                  <i
-                    className={`${group.icon} text-lg`}
-                    style={{ color: group.color }}
-                  />
+        <div className="skill-grid-band">
+          <div className="skill-card-grid">
+            {skillGroups.map((group, groupIndex) => (
+              <motion.article
+                className="skill-card"
+                key={group.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: 0.45, delay: (groupIndex % 4) * 0.06 }}
+              >
+                <header>
+                  <span className="skill-group-icon"><i className={group.icon} /></span>
+                  <div><h3>{group.category}</h3><p>{group.description}</p></div>
+                </header>
+                <div className="skill-list">
+                  {group.skills.map((skill) => <div className="skill-chip" key={skill.name}><SkillIcon icon={skill.icon} /><span>{skill.name}</span></div>)}
                 </div>
-                <div>
-                  <h3
-                    className="text-lg md:text-xl font-bold text-text-primary"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    {group.category}
-                  </h3>
-                  <p 
-                    className="text-sm text-text-muted mt-1"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {group.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Skills Chips */}
-              <div className="flex flex-wrap gap-3">
-                {group.skills.map((skill, si) => (
-                  <motion.div
-                    key={skill.name}
-                    className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all cursor-default"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: gi * 0.1 + si * 0.05 + 0.3 }}
-                  >
-                    {typeof skill.icon === "string" ? (
-                      skill.icon.startsWith("fa-") ? (
-                        <i
-                          className={`${skill.icon} text-sm`}
-                          style={{ color: "#94A3B8" }}
-                        />
-                      ) : (
-                        <span className="text-[10px] font-bold bg-white/10 px-1.5 py-0.5 rounded text-text-muted" style={{ fontFamily: "var(--font-heading)" }}>
-                          {skill.icon}
-                        </span>
-                      )
-                    ) : (
-                      <span className="text-sm flex items-center justify-center" style={{ color: "#94A3B8" }}>
-                        {skill.icon}
-                      </span>
-                    )}
-                    <span
-                      className="text-sm font-medium text-text-secondary"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

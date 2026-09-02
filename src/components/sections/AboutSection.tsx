@@ -1,243 +1,151 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionWrapper, { SectionHeader } from "../SectionWrapper";
+import Image from "next/image";
 
-const highlights = [
-  {
-    icon: "fa-solid fa-graduation-cap",
-    title: "University of Moratuwa",
-    desc: "B.Sc (Hons) Information Technology",
-    color: "#00D9FF",
-  },
-  {
-    icon: "fa-solid fa-code",
-    title: "Full-Stack Engineering",
-    desc: "React, Node.js, Flutter, Firebase, Cloud",
-    color: "#6C63FF",
-  },
-  {
-    icon: "fa-solid fa-lightbulb",
-    title: "Product-Focused Mindset",
-    desc: "Building solutions from a user-centered design perspective",
-    color: "#8B5CF6",
-  },
-  {
-    icon: "fa-solid fa-brain",
-    title: "System Design Thinking",
-    desc: "Approaching problems with architectural clarity",
-    color: "#3B82F6",
-  },
+const details = [
+  { icon: "fa-solid fa-location-dot", label: "Based in", value: "Kalutara, Sri Lanka" },
+  { icon: "fa-regular fa-envelope", label: "Email", value: "dileepaashen81@gmail.com", href: "mailto:dileepaashen81@gmail.com" },
+  { icon: "fa-regular fa-calendar", label: "Availability", value: "Open to opportunities" },
+  { icon: "fa-brands fa-linkedin-in", label: "Let’s connect", value: "LinkedIn / GitHub", href: "https://www.linkedin.com/in/dileepa-ashen-179534270/" },
+];
+
+const strengths = [
+  "Full-stack engineering across web and mobile",
+  "Scalable architecture and system design thinking",
+  "Product-focused, user-centered solution design",
+  "Cloud deployment and DevOps operations",
+  "Clean, maintainable software engineering",
+  "Turning complex challenges into working systems",
+];
+
+const interests = [
+  { title: "Mathematics", icon: "fa-solid fa-square-root-variable", description: "From discrete mathematics to algorithmic analysis, mathematics shapes how I understand complex logic and optimize code.", topics: ["Linear Algebra", "Calculus", "Number Theory", "Graph Theory"] },
+  { title: "Software Architecture", icon: "fa-solid fa-sitemap", description: "Designing robust, scalable systems that manage complexity while maintaining clean-code principles.", topics: ["System Design", "Scalability", "Clean Code"] },
+  { title: "Scientific Thinking", icon: "fa-solid fa-flask-vial", description: "A hypothesis-driven approach where features are experiments and decisions are grounded in evidence.", topics: ["First Principles", "Systems Thinking", "Data-Driven Decisions", "Research Methods"] },
+  { title: "Books & Research", icon: "fa-solid fa-book-open-reader", description: "Continuous learning across technology, science, philosophy, and innovation strengthens my engineering perspective.", topics: ["AI/ML Research", "System Design", "Science Literature", "Tech Innovation"] },
 ];
 
 export default function AboutSection() {
   return (
-    <SectionWrapper id="about" className="py-24 md:py-32">
-      <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32 mx-auto">
-        <SectionHeader
-          label="About"
-          title="The Engineer Behind the Code"
-          subtitle="Driven by curiosity, powered by logic, and committed to engineering excellence."
-        />
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Story */}
-          <motion.div
-            className="flex flex-col gap-6"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="glass-card rounded-2xl p-8">
-              <p
-                className="text-base leading-[1.85] text-text-secondary"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Skilled Software Engineering undergraduate at the{" "}
-                <span className="text-text-primary font-medium">
-                  University of Moratuwa
-                </span>
-                , passionate about building impactful digital systems that solve
-                real-world problems. My journey in tech is deeply rooted in a
-                fascination with{" "}
-                fascination with <span className="text-accent-cyan/80">software architecture</span> and{" "}
-                <span className="text-accent-indigo/80">system design</span> —
-                disciplines that teach us to build solutions that are robust, scalable, and efficient.
-              </p>
-              <p
-                className="text-base leading-[1.85] text-text-secondary mt-4"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                With hands-on experience across the full stack — from React and
-                Node.js to Flutter, Firebase, and cloud deployment — I approach
-                every project with a{" "}
-                <span className="text-text-primary font-medium">
-                  solution design perspective
-                </span>
-                . I believe great software isn&apos;t just functional; it&apos;s
-                thoughtful, scalable, and designed with the end user at its
-                core.
-              </p>
-              <p
-                className="text-base leading-[1.85] text-text-secondary mt-4"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                As a co-founder of{" "}
-                <span className="text-text-primary font-medium">
-                  ApeakStrategy
-                </span>
-                , I&apos;ve led solution architecture, DevOps operations, and
-                delivered production systems across multiple industries. I
-                thrive on collaborative innovation and turning complex
-                challenges into elegant, working systems.
-              </p>
-            </div>
-
-            {/* Quote card */}
-            <div className="glass-card rounded-2xl p-6 border-l-2 border-accent-cyan/30">
-              <p
-                className="text-sm italic text-text-muted leading-relaxed"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                &ldquo;Any fool can write code that a computer can understand. 
-                Good programmers write code that humans can understand.&rdquo;
-              </p>
-              <p
-                className="text-xs text-accent-cyan/50 mt-2"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                — Engineering Philosophy
-              </p>
+    <section id="about" className="about-section">
+      <div className="about-top-dark">
+        <div className="portfolio-container about-top-inner">
+          <motion.div className="about-top-copy" initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: .25 }}>
+            <span>Hello</span>
+            <h2>I&apos;m Ashen Edussuriya</h2>
+            <p>A passionate software engineer focused on crafting clean, maintainable, and scalable solutions. I love turning ideas into real-world products through code.</p>
+            <div className="about-focus-list">
+              <div><i className="fa-solid fa-code" /><strong>Full-stack</strong><span>Web & mobile engineering</span></div>
+              <div><i className="fa-regular fa-folder" /><strong>Architecture</strong><span>Scalable system design</span></div>
+              <div><i className="fa-solid fa-users" /><strong>Product</strong><span>User-centered thinking</span></div>
             </div>
           </motion.div>
-
-          {/* Highlights Grid */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {highlights.map((h, i) => (
-              <motion.div
-                key={h.title}
-                className="glass-card glass-card-hover rounded-2xl p-6 flex flex-col gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i + 0.3 }}
-              >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center"
-                  style={{
-                    background: `${h.color}12`,
-                    border: `1px solid ${h.color}25`,
-                  }}
-                >
-                  <i className={`${h.icon} text-lg`} style={{ color: h.color }} />
-                </div>
-                <div>
-                  <h3
-                    className="text-sm font-semibold text-text-primary mb-1"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    {h.title}
-                  </h3>
-                  <p
-                    className="text-xs text-text-muted leading-relaxed"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {h.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Education detail card
-            <motion.div
-              className="sm:col-span-2 glass-card rounded-2xl p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-accent-cyan/8 border border-accent-cyan/15 flex items-center justify-center">
-                  <i className="fa-solid fa-award text-accent-cyan text-sm" />
-                </div>
-                <div>
-                  <h4
-                    className="text-sm font-semibold text-text-primary"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    Education Highlights
-                  </h4>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <p
-                    className="text-xs text-text-muted"
-                    style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}
-                  >
-                    CURRENT GPA
-                  </p>
-                  <p
-                    className="text-xl font-bold gradient-text-cyan mt-1"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    3.62
-                  </p>
-                </div>
-                <div>
-                  <p
-                    className="text-xs text-text-muted"
-                    style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}
-                  >
-                    RECOGNITION
-                  </p>
-                  <p
-                    className="text-sm text-text-primary mt-1"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    Dean&apos;s List — L2S2
-                  </p>
-                </div>
-                <div>
-                  <p
-                    className="text-xs text-text-muted"
-                    style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}
-                  >
-                    A/L Z-SCORE
-                  </p>
-                  <p
-                    className="text-sm text-text-primary mt-1"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    1.7565
-                  </p>
-                </div>
-                <div>
-                  <p
-                    className="text-xs text-text-muted"
-                    style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}
-                  >
-                    STREAM
-                  </p>
-                  <p
-                    className="text-sm text-text-primary mt-1"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    Bio Science → IT
-                  </p>
-                </div>
-              </div>
-            </motion.div> */}
+          <motion.div className="about-top-art" aria-hidden="true" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+            <div className="about-checker" />
+            <div className="about-top-photo"><Image src="/profile2.png" alt="" fill priority sizes="(max-width: 680px) 78vw, 560px" className="about-top-photo-image" /></div>
+            <div className="about-orange-lines"><i /><i /><i /><i /><i /></div>
+            <div className="about-accent-strokes about-accent-strokes-top"><i /><i /><i /></div>
+            <div className="about-accent-strokes about-accent-strokes-bottom"><i /><i /><i /></div>
           </motion.div>
         </div>
       </div>
-    </SectionWrapper>
+
+      <div className="about-intro">
+        <div className="portfolio-container about-intro-inner">
+          <motion.div
+            className="about-copy"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65 }}
+          >
+            <span className="portfolio-eyebrow">About me</span>
+            <h2>The engineer<br />behind the code</h2>
+            <p>
+              I&apos;m Ashen Edussuriya, a Software Engineering undergraduate and
+              Full-Stack Developer who loves turning ideas into scalable,
+              impactful software solutions.
+            </p>
+            <i className="about-rule" aria-hidden="true" />
+
+            <div className="about-details">
+              {details.map((detail) => {
+                const content = (
+                  <>
+                    <span className="about-detail-icon"><i className={detail.icon} /></span>
+                    <span><small>{detail.label}</small><strong>{detail.value}</strong></span>
+                  </>
+                );
+                return detail.href ? (
+                  <a key={detail.label} href={detail.href} target={detail.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{content}</a>
+                ) : <div key={detail.label}>{content}</div>;
+              })}
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="about-visual about-visual-graphic"
+            aria-hidden="true"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <div className="about-asterisk" aria-hidden="true"><i /><i /><i /></div>
+            <div className="about-dot-grid" aria-hidden="true" />
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="about-information">
+        <div className="portfolio-container about-panels">
+          <motion.article className="about-card education-card" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <header><span><i className="fa-solid fa-graduation-cap" /></span><h3>Education</h3></header>
+            <div className="education-entry">
+              <h4>B.Sc. (Hons) Information Technology</h4>
+              <p>University of Moratuwa, Sri Lanka</p>
+              <small>Software Engineering Undergraduate</small>
+            </div>
+          </motion.article>
+
+          <motion.article className="about-card overview-card" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <header><span><i className="fa-solid fa-briefcase" /></span><h3>Professional overview</h3></header>
+            <p>
+              Skilled in building impactful digital systems that solve real-world
+              problems. My work spans React and Node.js through Flutter,
+              Firebase, cloud deployment, solution architecture, and DevOps.
+            </p>
+            <div className="strength-grid">
+              {strengths.map((strength) => <div key={strength}><i className="fa-solid fa-check" /><span>{strength}</span></div>)}
+            </div>
+          </motion.article>
+
+          <motion.blockquote className="about-philosophy" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+            <span>Engineering philosophy</span>
+            <p>Great software isn&apos;t just functional. It&apos;s thoughtful, scalable, maintainable, and designed with the end user at its core.</p>
+          </motion.blockquote>
+
+          <div className="about-curiosity-section">
+            <motion.div className="about-curiosity-heading" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <span className="portfolio-eyebrow">Curiosity & perspective</span>
+              {/* <h3>What shapes my engineering</h3> */}
+              <h3>Beyond the Code</h3>
+              <p>The intellectual pursuits that fuel how I solve problems, design systems, and continue learning.</p>
+            </motion.div>
+
+            <div className="about-interest-grid">
+              {interests.map((interest, index) => (
+                <motion.article className="about-interest-card" key={interest.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .06 }}>
+                  <header><span><i className={interest.icon} /></span><h4>{interest.title}</h4></header>
+                  <p>{interest.description}</p>
+                  <div>{interest.topics.map((topic) => <small key={topic}>{topic}</small>)}</div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -18,7 +18,7 @@ const interests = [
       "Designing systems that are robust, scalable, and capable of handling complexity while maintaining clean code principles.",
     icon: "fa-solid fa-sitemap",
     color: "#6C63FF",
-    topics: ["Microservices", "System Design", "Scalability", "Clean Code"],
+    topics: ["System Design", "Scalability", "Clean Code"],
   },
   {
     title: "Scientific Thinking",
