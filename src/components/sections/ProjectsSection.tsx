@@ -1,281 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionWrapper, { SectionHeader } from "../SectionWrapper";
-
-interface Project {
-  title: string;
-  subtitle: string;
-  challenge: string;
-  solution: string;
-  impact: string;
-  technologies: string[];
-  github?: string;
-  live?: string;
-  playStore?: string;
-  color: string;
-  icon: string;
-  period: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Lanka EV Plus",
-    subtitle: "EV Charging & Mobility Platform",
-    challenge:
-      "Sri Lanka lacked a unified EV charging infrastructure with real-time availability and seamless payment integration.",
-    solution:
-      "Built a full-stack EV charging ecosystem with mobile app, admin panel, and web platform integrating 60kW chargers, OCPP protocol, real-time availability, payment gateway, and comprehensive API backend.",
-    impact:
-      "Pioneered digital EV infrastructure management for Sri Lanka's emerging electric vehicle market.",
-    technologies: ["React", "Node.js", "Firebase", "Flutter", "OCPP", "REST API","PayHere","MySQL"],
-    github: "https://github.com/DileepaAshen2000",
-    live: "https://www.lankaevplus.com/",
-    playStore: "https://play.google.com/store/apps/details?id=com.lankaevplus.app",
-    color: "#00D9FF",
-    icon: "fa-solid fa-charging-station",
-    period: "Oct 2025 - Apr 2026",
-  },
-  {
-    title: "Sinhala Hate Speech Detection",
-    subtitle: "Final Year Research Project",
-    challenge:
-      "Detecting hate speech in Sinhala text is extremely challenging due to limited NLP resources and contextual complexity of the language.",
-    solution:
-      "Developed a machine learning-based system leveraging contextual understanding with transformer models and trend analysis for improved classification accuracy.",
-    impact:
-      "Advanced the state of Sinhala NLP research with a novel approach to contextual hate speech detection.",
-    technologies: ["Python", "ML/NLP", "Transformers", "Data Analysis","Deep Learning"],
-    // github: "https://github.com/DileepaAshen2000",
-    color: "#6C63FF",
-    icon: "fa-solid fa-brain",
-    period: "Final Year Research",
-  },
-  {
-    title: "Mensa Web Application",
-    subtitle: "Official Platform & Admin Panel",
-    challenge:
-      "Needed a comprehensive web platform with content management, user administration, and secure authentication.",
-    solution:
-      "Contributed to developing the official website and admin panel with content management, user admin, secure authentication, and optimized system performance.",
-    impact:
-      "Enhanced organizational digital presence with streamlined content and user management.",
-    technologies: ["Next.js", "Node.js", "Firebase", "Tailwind CSS"],
-    github: "https://github.com/A-Peak-strategy/mensa-web",
-    live: "https://mensa.lk/",
-    color: "#8B5CF6",
-    icon: "fa-solid fa-globe",
-    period: "Team Project - 2025",
-  },
-  {
-    title: "Inventory Management System",
-    subtitle: "Level 2 Project — Rootcode Collaboration",
-    challenge:
-      "Manual inventory processes led to inaccuracies, security vulnerabilities, and poor operational visibility.",
-    solution:
-      "Developed core inventory features including stock-in/out, adjustments, dashboard analytics, password recovery, and efficient data handling workflows.",
-    impact:
-      "Streamlined inventory operations with real-time tracking, secure access, and actionable analytics.",
-    technologies: ["React", "Spring Boot", "MySQL", "Material UI","JWT","Tailwind CSS"],
-    github: "https://github.com/DileepaAshen2000/centralSyncFrontend",
-    color: "#3B82F6",
-    icon: "fa-solid fa-boxes-stacked",
-    period: "Level 2 - Rootcode 2024",
-  },
-  {
-    title: "Green-Light Solar Lanka",
-    subtitle: "Solar Product Management Platform",
-    challenge:
-      "Solar product businesses needed a digital platform for managing listings, payments, and administrative operations.",
-    solution:
-      "Built a full web application to manage solar product listings, payment processing, and administrative operations with a user-friendly interface.",
-    impact:
-      "Improved product visibility, transaction handling, and overall business efficiency for solar energy providers.",
-    technologies: ["React", "Node.js", "Firebase","MySQL","Tailwind CSS","PayHere", "REST API"],
-    github: "https://github.com/A-Peak-strategy/green-light-solar-web",
-    color: "#10B981",
-    icon: "fa-solid fa-solar-panel",
-    period: "Team Project (Ongoing)",
-  },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function ProjectsSection() {
   return (
-    <SectionWrapper id="projects" className="py-24 md:py-32">
-      <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32 mx-auto">
-        <SectionHeader
-          label="Projects"
-          title="Featured Missions"
-          subtitle="Impactful systems designed and deployed across diverse problem domains."
-        />
+    <section id="projects" className="projects-section">
+      <div className="projects-heading-wrap">
+        <div className="projects-bg-mark" aria-hidden="true"><i /><i /><i /></div>
+        <div className="projects-dots" aria-hidden="true" />
+        <motion.header className="portfolio-container projects-heading" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <span className="portfolio-eyebrow">Projects</span>
+          <h2>Projects that<br />solve real problems</h2>
+          <p>A collection of projects where I applied clean architecture, modern technologies, and best practices to deliver value and impact.</p>
+          <i className="about-rule" aria-hidden="true" />
+        </motion.header>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              className="glass-card glass-card-hover rounded-2xl overflow-hidden group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              {/* Top accent line */}
-              <div
-                className="h-px w-full"
-                style={{
-                  background: `linear-gradient(90deg, transparent, ${project.color}40, transparent)`,
-                }}
-              />
-
-              <div className="p-6 md:p-8">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-5">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{
-                        background: `${project.color}12`,
-                        border: `1px solid ${project.color}25`,
-                      }}
-                    >
-                      <i
-                        className={`${project.icon}`}
-                        style={{ color: project.color }}
-                      />
+      <div className="projects-showcase">
+        <div className="portfolio-container">
+          <div className="project-grid project-list-grid">
+            {projects.map((project, index) => (
+              <motion.article className="project-card project-row-card" key={project.slug} initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: .5 }}>
+                <div className="project-visual project-portrait-visual">
+                  <span className="project-number">0{index + 1}</span>
+                  {project.image ? <Image src={project.image} alt={`${project.title} logo`} className="project-logo" /> : <i className={project.icon} aria-hidden="true" />}
+                  <span className="project-visual-label">{project.subtitle}</span>
+                </div>
+                <div className="project-body">
+                  <div className="project-meta"><span>{project.subtitle}</span><small>{project.period}</small></div>
+                  <h3>{project.title}</h3>
+                  <div className="project-story">
+                    <div><strong>Challenge</strong><p>{project.challenge}</p></div>
+                    <div><strong>Solution</strong><p>{project.solution}</p></div>
+                  </div>
+                  <div className="project-impact"><strong>Impact</strong><p>{project.impact}</p></div>
+                  <div className="project-tech">{project.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
+                  <div className="project-card-actions">
+                    <div className="project-icon-links">
+                      {project.live && <a href={project.live} target="_blank" rel="noreferrer" aria-label={`${project.title} website`} title="Website"><i className="fa-solid fa-globe" /></a>}
+                      {project.playStore && <a href={project.playStore} target="_blank" rel="noreferrer" aria-label={`${project.title} on Google Play`} title="Google Play"><i className="fa-brands fa-google-play" /></a>}
+                      {project.github && <a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.title} repository`} title="GitHub repository"><i className="fa-brands fa-github" /></a>}
                     </div>
-                    <div>
-                      <h3
-                        className="text-lg font-semibold text-text-primary"
-                        style={{ fontFamily: "var(--font-heading)" }}
-                      >
-                        {project.title}
-                      </h3>
-                      <p
-                        className="text-xs text-text-muted"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        {project.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <span
-                    className="text-[10px] text-text-muted whitespace-nowrap"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    {project.period}
-                  </span>
-                </div>
-
-                {/* Challenge & Solution */}
-                <div className="flex flex-col gap-3 mb-5">
-                  <div>
-                    <p
-                      className="text-[10px] uppercase tracking-wider text-text-muted mb-1"
-                      style={{ fontFamily: "var(--font-mono)" }}
-                    >
-                      Challenge
-                    </p>
-                    <p
-                      className="text-sm text-text-secondary leading-relaxed"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {project.challenge}
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      className="text-[10px] uppercase tracking-wider text-text-muted mb-1"
-                      style={{ fontFamily: "var(--font-mono)" }}
-                    >
-                      Solution
-                    </p>
-                    <p
-                      className="text-sm text-text-secondary leading-relaxed"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {project.solution}
-                    </p>
+                    <Link className="project-view-more" href={`/projects/${project.slug}`}>View more <span>→</span></Link>
                   </div>
                 </div>
-
-                {/* Impact */}
-                <div
-                  className="p-3 rounded-lg mb-5"
-                  style={{
-                    background: `${project.color}08`,
-                    border: `1px solid ${project.color}15`,
-                  }}
-                >
-                  <p
-                    className="text-[10px] uppercase tracking-wider mb-1"
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      color: project.color,
-                    }}
-                  >
-                    Impact
-                  </p>
-                  <p
-                    className="text-sm text-text-secondary leading-relaxed"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {project.impact}
-                  </p>
-                </div>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex items-center flex-wrap gap-4 pt-4 border-t border-white/5">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-text-muted hover:text-accent-cyan transition-colors"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      <i className="fa-brands fa-github text-xs" />
-                      Source
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-text-muted hover:text-accent-cyan transition-colors"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      <i className="fa-solid fa-globe text-xs" />
-                      Website
-                    </a>
-                  )}
-                  {project.playStore && (
-                    <a
-                      href={project.playStore}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-text-muted hover:text-accent-cyan transition-colors"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      <i className="fa-brands fa-google-play text-xs" />
-                      Play Store
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

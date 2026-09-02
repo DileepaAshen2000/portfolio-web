@@ -4,13 +4,11 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import JourneySection from "@/components/sections/JourneySection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
+import ResearchSection from "@/components/sections/ResearchSection";
 import LeadershipSection from "@/components/sections/LeadershipSection";
-import CuriositySection from "@/components/sections/CuriositySection";
 import ContactSection from "@/components/sections/ContactSection";
-import BrandsSection from "@/components/sections/BrandsSection";
 import Footer from "@/components/Footer";
 
 const Starfield = dynamic(() => import("@/components/Starfield"), {
@@ -57,27 +55,17 @@ export default function Home() {
       {/* Sections */}
       <HeroSection />
 
-      <BrandsSection />
-
-      <div className="section-divider" />
       <AboutSection />
 
-      <div className="section-divider" />
-      <JourneySection />
-
-      <div className="section-divider" />
       <SkillsSection />
 
       <div className="section-divider" />
       <ProjectsSection />
 
-      <div className="section-divider" />
+      <ResearchSection />
+
       <LeadershipSection />
 
-      <div className="section-divider" />
-      <CuriositySection />
-
-      <div className="section-divider" />
       <ContactSection />
 
       <Footer />

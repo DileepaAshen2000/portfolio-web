@@ -2,79 +2,40 @@
 
 import { motion } from "framer-motion";
 
+const navigation = [["Home", "#hero"], ["About", "#about"], ["Skills", "#skills"], ["Projects", "#projects"], ["Research", "#research"], ["Experience", "#experience"], ["Contact", "#contact"]];
+const connections = [
+  { label: "Email", value: "dileepaashen81@gmail.com", href: "mailto:dileepaashen81@gmail.com", icon: "fa-regular fa-envelope" },
+  { label: "GitHub", value: "DileepaAshen2000", href: "https://github.com/DileepaAshen2000", icon: "fa-brands fa-github" },
+  { label: "LinkedIn", value: "Dileepa Ashen", href: "https://www.linkedin.com/in/dileepa-ashen-179534270/", icon: "fa-brands fa-linkedin-in" },
+  { label: "Medium", value: "@dileepaashen81", href: "https://medium.com/@dileepaashen81", icon: "fa-brands fa-medium" },
+];
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="relative z-10 border-t border-white/5">
-      <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32 mx-auto py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Logo & Copyright */}
-          <motion.div
-            className="flex items-center gap-3"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="w-7 h-7 rounded-md bg-gradient-to-br from-accent-cyan/20 to-accent-indigo/20 flex items-center justify-center">
-              <span
-                className="text-[10px] font-bold gradient-text"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                DA
-              </span>
-            </div>
-            <p
-              className="text-xs text-text-muted"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              © {currentYear} Ashen Edussuriya. Engineered with precision.
-            </p>
-          </motion.div>
-
-          {/* Social Links */}
-          <div className="flex items-center gap-3">
-            {[
-              {
-                icon: "fa-brands fa-github",
-                href: "https://github.com/DileepaAshen2000",
-              },
-              {
-                icon: "fa-brands fa-linkedin-in",
-                href: "https://www.linkedin.com/in/dileepa-ashen-179534270/",
-              },
-              {
-                icon: "fa-brands fa-medium",
-                href: "https://medium.com/@dileepaashen81",
-              },
-              {
-                icon: "fa-solid fa-envelope",
-                href: "mailto:dileepaashen81@gmail.com",
-              },
-            ].map((s) => (
-              <a
-                key={s.icon}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted hover:text-accent-cyan hover:bg-accent-cyan/5 transition-all border border-transparent hover:border-accent-cyan/15"
-              >
-                <i className={`${s.icon} text-xs`} />
-              </a>
-            ))}
+    <footer className="portfolio-footer compact-footer">
+      <motion.div className="footer-frame compact-footer-frame" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }}>
+        <div className="compact-footer-main">
+          <div className="compact-footer-profile">
+            <div className="footer-brand"><span className="brand-mark" aria-hidden="true"><i /><i /></span><div><h2>Ashen Edussuriya</h2><p>Software Engineer</p></div></div>
+            <p>Building scalable, impactful software solutions and turning complex problems into clean, thoughtful digital systems.</p>
+            <a href="/Ashen_Resume.pdf" target="_blank" rel="noreferrer" className="compact-resume-link">Download resume <span aria-hidden="true">↗</span></a>
           </div>
-
-          {/* Back to top */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 text-xs text-text-muted hover:text-accent-cyan transition-colors"
-            style={{ fontFamily: "var(--font-mono)" }}
-          >
-            <i className="fa-solid fa-arrow-up text-[10px]" />
-            Back to Top
-          </button>
+          <nav className="compact-footer-nav" aria-label="Footer navigation">
+            <h3>Explore</h3>
+            <div>{navigation.map(([label, href]) => <a href={href} key={label}>{label}<span aria-hidden="true">›</span></a>)}</div>
+          </nav>
+          <div className="compact-footer-connect">
+            <h3>Connect</h3>
+            <div>{connections.map((connection) => <a href={connection.href} target={connection.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" key={connection.label}><i className={connection.icon} /><span><strong>{connection.label}</strong><small>{connection.value}</small></span></a>)}</div>
+          </div>
         </div>
-      </div>
+        <div className="footer-bottom compact-footer-bottom">
+          <p>© {currentYear} Ashen Edussuriya. All rights reserved.</p>
+          {/* <p><i className="fa-solid fa-heart" /> Built with passion and purpose</p> */}
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><i className="fa-solid fa-arrow-up" />Back to top</button>
+        </div>
+      </motion.div>
     </footer>
   );
 }
