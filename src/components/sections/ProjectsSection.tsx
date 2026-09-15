@@ -9,7 +9,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="projects-section">
       <div className="projects-heading-wrap">
-        <div className="projects-bg-mark" aria-hidden="true"><i /><i /><i /></div>
+        {/* <div className="projects-bg-mark" aria-hidden="true"><i /><i /><i /></div> */}
         <div className="projects-dots" aria-hidden="true" />
         <motion.header className="portfolio-container projects-heading" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="portfolio-eyebrow">Projects</span>

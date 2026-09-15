@@ -47,7 +47,7 @@ export default function ContactSection() {
             <i className="about-rule" aria-hidden="true" />
           </motion.header>
           <div className="contact-visual" aria-hidden="true">
-            <div className="contact-bg-mark"><i /><i /><i /></div>
+            {/* <div className="contact-bg-mark"><i /><i /><i /></div> */}
             <div className="contact-dots" />
             {/* <div className="contact-photo"><Image src="/Profile2.png" alt="" fill sizes="(max-width: 800px) 55vw, 430px" className="contact-photo-image" /></div> */}
           </div>

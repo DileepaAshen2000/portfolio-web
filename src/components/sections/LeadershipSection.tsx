@@ -10,10 +10,16 @@ const roles = [
     icon: "fa-solid fa-rocket",
   },
   {
-    number: "02", title: "Software Engineering Intern", company: "Hasthiya IT", period: "Feb 2025 — Feb 2026",
-    description: "Full-stack development with React.js, Node.js, Express.js, Firebase, and MySQL in agile production environments.",
-    responsibilities: ["Full-Stack Web Application Development", "Backend API Creation & Server Logic", "Responsive UI/UX Implementation", "Agile/SCRUM Team Collaboration", "Deployment, Debugging & API Testing", "Git/GitHub-Based Development Workflows"],
+    number: "02", title: "Associate Software Engineer", company: "Hasthiya Company", period: "Aug 2025 — Feb 2026",
+    description: "Progressed from intern to Associate Software Engineer, taking increased responsibility for production application development and delivery across web and backend services.",
+    responsibilities: ["Production Application Development", "React.js Web Development", "Node.js & Express.js Services", "REST API Integration", "Firebase & MySQL Operations", "Testing, Debugging & Deployment"],
     icon: "fa-solid fa-briefcase",
+  },
+  {
+    number: "03", title: "Software Engineering Intern", company: "Hasthiya Company", period: "Feb 2025 — Aug 2025",
+    description: "Completed six months of hands-on software engineering experience across frontend, backend, databases, payment integration, testing, and deployment.",
+    responsibilities: ["Backend APIs & Server-Side Logic", "Database Operations", "Stripe Payment Integration", "Responsive React.js Features", "Debugging, Testing & Code Improvements", "Deployment Support"],
+    icon: "fa-solid fa-code",
   },
 ];
 
@@ -21,7 +27,7 @@ export default function LeadershipSection() {
   return (
     <section id="experience" className="experience-section">
       <div className="experience-heading-wrap">
-        <div className="experience-bg-mark" aria-hidden="true"><i /><i /><i /></div>
+        {/* <div className="experience-bg-mark" aria-hidden="true"><i /><i /><i /></div> */}
         <div className="experience-dots" aria-hidden="true" />
         <motion.header className="portfolio-container experience-heading" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="portfolio-eyebrow">Experience</span>
@@ -37,7 +43,7 @@ export default function LeadershipSection() {
             <span><i className="fa-solid fa-user-tie" /></span>
             <div><small>Professional journey</small><strong>From full-stack delivery to technical leadership</strong></div>
           </div>
-          <div className="experience-timeline" aria-hidden="true"><i /><i /></div>
+          <div className="experience-timeline" aria-hidden="true"><i /><i /><i /></div>
           <div className="experience-grid">
             {roles.map((role, index) => (
               <motion.article className="experience-card" key={role.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: .5, delay: index * .1 }}>
