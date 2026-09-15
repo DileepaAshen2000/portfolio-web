@@ -1068,3 +1068,39 @@ body {
   background: var(--solar-ink);
   color: #fff;
 }
+
+/* Experience section — three distinct professional roles. */
+.experience-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.experience-timeline i:first-child {
+  left: 16.666%;
+}
+.experience-timeline i:nth-child(2) {
+  left: 50%;
+}
+.experience-timeline i:last-child {
+  left: 83.333%;
+}
+.experience-grid .experience-responsibilities {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 1100px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .experience-grid .experience-card:first-child {
+    grid-column: 1 / -1;
+  }
+  .experience-timeline {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  .experience-grid .experience-card:first-child {
+    grid-column: auto;
+  }
+}

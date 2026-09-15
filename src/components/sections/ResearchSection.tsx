@@ -11,7 +11,7 @@ export default function ResearchSection() {
   return (
     <section id="research" className="research-section">
       <div className="research-heading-wrap">
-        <div className="research-bg-mark" aria-hidden="true"><i /><i /><i /></div>
+        {/* <div className="research-bg-mark" aria-hidden="true"><i /><i /><i /></div> */}
         <div className="research-heading-dots" aria-hidden="true" />
         <motion.header className="portfolio-container research-heading" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="portfolio-eyebrow">Research</span>
