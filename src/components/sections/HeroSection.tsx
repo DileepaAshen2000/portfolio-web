@@ -47,7 +47,7 @@ export default function HeroSection() {
         >
           <Image
             src="/me2.png"
-            alt="Ashen Edussuriya, software engineer"
+            alt="Dileepa Ashen, software engineer"
             fill
             priority
             sizes="(max-width: 700px) 72vw, 490px"

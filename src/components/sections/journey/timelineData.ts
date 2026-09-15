@@ -44,17 +44,6 @@ export const timelineMilestones: TimelineMilestone[] = [
     icon: "fa-solid fa-briefcase",
   },
   {
-    year: "2024",
-    title: "Systems Online",
-    subtitle: "Level 2 Projects & Rootcode",
-    description:
-      "Built the Inventory Management System with Rootcode collaboration. Developed core features including stock management, dashboard analytics, and secure authentication flows.",
-    category: "work",
-    status: "Completed",
-    color: "#8B5CF6",
-    icon: "fa-solid fa-server",
-  },
-  {
     year: "2023",
     title: "First Contact",
     subtitle: "Competitions & Community",

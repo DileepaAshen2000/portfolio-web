@@ -24,9 +24,16 @@ export default function ProjectsSection() {
           <div className="project-grid project-list-grid">
             {projects.map((project, index) => (
               <motion.article className="project-card project-row-card" key={project.slug} initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: .5 }}>
-                <div className="project-visual project-portrait-visual">
+                <div className={`project-visual project-portrait-visual${project.image ? " project-cover-visual" : ""}`}>
                   <span className="project-number">0{index + 1}</span>
-                  {project.image ? <Image src={project.image} alt={`${project.title} logo`} className="project-logo" /> : <i className={project.icon} aria-hidden="true" />}
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      className="project-logo project-cover-image"
+                      sizes="(max-width: 720px) 100vw, 36vw"
+                    />
+                  ) : <i className={project.icon} aria-hidden="true" />}
                   <span className="project-visual-label">{project.subtitle}</span>
                 </div>
                 <div className="project-body">
@@ -42,6 +49,7 @@ export default function ProjectsSection() {
                     <div className="project-icon-links">
                       {project.live && <a href={project.live} target="_blank" rel="noreferrer" aria-label={`${project.title} website`} title="Website"><i className="fa-solid fa-globe" /></a>}
                       {project.playStore && <a href={project.playStore} target="_blank" rel="noreferrer" aria-label={`${project.title} on Google Play`} title="Google Play"><i className="fa-brands fa-google-play" /></a>}
+                      {project.appStore && <a href={project.appStore} target="_blank" rel="noreferrer" aria-label={`${project.title} on the Apple App Store`} title="Apple App Store"><i className="fa-brands fa-apple" /></a>}
                       {project.github && <a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.title} repository`} title="GitHub repository"><i className="fa-brands fa-github" /></a>}
                     </div>
                     <Link className="project-view-more" href={`/projects/${project.slug}`}>View more <span>→</span></Link>

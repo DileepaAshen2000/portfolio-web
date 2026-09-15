@@ -33,7 +33,7 @@ export default function AboutSection() {
         <div className="portfolio-container about-top-inner">
           <motion.div className="about-top-copy" initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: .25 }}>
             <span>Hello</span>
-            <h2>I&apos;m Ashen Edussuriya</h2>
+            <h2>I&apos;m Dileepa Ashen</h2>
             <p>A passionate software engineer focused on crafting clean, maintainable, and scalable solutions. I love turning ideas into real-world products through code.</p>
             <div className="about-focus-list">
               <div><i className="fa-solid fa-code" /><strong>Full-stack</strong><span>Web & mobile engineering</span></div>
@@ -63,7 +63,7 @@ export default function AboutSection() {
             <span className="portfolio-eyebrow">About me</span>
             <h2>The engineer<br />behind the code</h2>
             <p>
-              I&apos;m Ashen Edussuriya, a Software Engineering undergraduate and
+              I&apos;m Dileepa Ashen, a Software Engineering undergraduate and
               Full-Stack Developer who loves turning ideas into scalable,
               impactful software solutions.
             </p>
@@ -105,7 +105,8 @@ export default function AboutSection() {
             <div className="education-entry">
               <h4>B.Sc. (Hons) Information Technology</h4>
               <p>University of Moratuwa, Sri Lanka</p>
-              <small>Software Engineering Undergraduate</small>
+              {/* <small>Software Engineering Undergraduate</small> */}
+              <small>GPA : 3.67 (Second Class Upper Division)</small>
             </div>
           </motion.article>
 

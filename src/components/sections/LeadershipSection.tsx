@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const roles = [
   {
-    number: "01", title: "Co-Founder & Software Engineer", company: "ApeakStrategy", period: "Mar 2025 — Present",
-    description: "Co-founded a digital solutions and marketing startup delivering web, mobile, and branding solutions for multiple clients across diverse industries.",
+    number: "01", title: "Software Engineer", company: "ApeakStrategy", period: "Mar 2025 — Present",
+    description: "A digital solutions and marketing startup delivering web, mobile, and branding solutions for multiple clients across diverse industries.",
     responsibilities: ["Solution Architecture & System Design", "Full-Stack Product Development", "DevOps, Hosting & Cloud Deployment", "EV Charging Platform with OCPP Integration", "Payment Gateway Integration & API Development", "Team Leadership & Client Relations"],
     icon: "fa-solid fa-rocket",
   },

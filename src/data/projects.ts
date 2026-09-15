@@ -1,7 +1,8 @@
 import type { StaticImageData } from "next/image";
-import lankaEvLogo from "@/logos/LankaEvPluslogo.png";
-import mensaLogo from "@/logos/mensa_logo.svg";
-import solarLogo from "@/logos/glsl-logo.png";
+import lankaEvLogo from "@/logos/LankaEVPlus-Project.png";
+import mensaLogo from "@/logos/Mensa.png";
+import solarLogo from "@/logos/green-light.png";
+import ceylonImage from "@/logos/Ceylon.png";
 
 export interface Project {
   slug: string;
@@ -14,6 +15,7 @@ export interface Project {
   github?: string;
   live?: string;
   playStore?: string;
+  appStore?: string;
   icon: string;
   period: string;
   image?: StaticImageData;
@@ -22,7 +24,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "lanka-ev-plus",
-    title: "Lanka EV Plus",
+    title: "Lanka EV Plus - EV Charging & Mobility Platform",
     subtitle: "EV Charging & Mobility Platform",
     challenge: "Sri Lanka lacked a unified EV charging infrastructure with real-time availability and seamless payment integration.",
     solution: "Built a full-stack EV charging ecosystem with mobile app, admin panel, and web platform integrating 60kW chargers, OCPP, real-time availability, payments, and an API backend.",
@@ -31,6 +33,7 @@ export const projects: Project[] = [
     github: "https://github.com/DileepaAshen2000",
     live: "https://www.lankaevplus.com/",
     playStore: "https://play.google.com/store/apps/details?id=com.lankaevplus.app",
+    appStore: "https://apps.apple.com/lk/app/lanka-ev-plus/id6762481492",
     icon: "fa-solid fa-charging-station",
     period: "Oct 2025 – Apr 2026",
     image: lankaEvLogo,
@@ -50,16 +53,17 @@ export const projects: Project[] = [
     image: mensaLogo,
   },
   {
-    slug: "inventory-management-system",
-    title: "Inventory Management System",
-    subtitle: "Level 2 Project — Rootcode Collaboration",
-    challenge: "Manual inventory processes led to inaccuracies, security vulnerabilities, and poor operational visibility.",
-    solution: "Developed stock-in/out, adjustments, dashboard analytics, password recovery, and efficient data-handling workflows.",
-    impact: "Streamlined inventory operations with real-time tracking, secure access, and actionable analytics.",
-    technologies: ["React", "Spring Boot", "MySQL", "Material UI", "JWT", "Tailwind CSS"],
-    github: "https://github.com/DileepaAshen2000/centralSyncFrontend",
-    icon: "fa-solid fa-boxes-stacked",
-    period: "Level 2 – Rootcode 2024",
+    slug: "ceylon-luxury-living",
+    title: "Ceylon Luxury Living",
+    subtitle: "Luxury Digital Publishing Ecosystem",
+    challenge: "A new luxury publication needed a distinctive identity, connected multimedia publishing, independent editorial operations, and a foundation for audience growth.",
+    solution: "Built a premium responsive reader experience, secure editorial dashboard, and publishing backend connecting articles, vlogs, collections, magazine editions, subscriptions, and saved content.",
+    impact: "Created a unified digital home for premium Sri Lankan lifestyle storytelling with scalable publishing and audience-engagement capabilities.",
+    technologies: ["React", "Node.js", "Firebase", "REST API", "Cloud Media", "PDF Flipbook", "SEO"],
+    live: "https://ceylonluxuryliving.com/",
+    icon: "fa-solid fa-book-open",
+    period: "Team Project · Digital Publishing",
+    image: ceylonImage,
   },
   {
     slug: "green-light-solar-lanka",

@@ -4,6 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/data/projects";
 import LankaEVCaseStudy from "@/components/projects/LankaEVCaseStudy";
+import MensaCaseStudy from "@/components/projects/MensaCaseStudy";
+import CeylonLuxuryCaseStudy from "@/components/projects/CeylonLuxuryCaseStudy";
+import GreenLightSolarCaseStudy from "@/components/projects/GreenLightSolarCaseStudy";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -13,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: `${project.title} | Ashen Edussuriya`, description: project.impact };
+  return { title: `${project.title} | Dileepa Ashen`, description: project.impact };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,6 +24,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const project = getProject(slug);
   if (!project) notFound();
   if (project.slug === "lanka-ev-plus") return <LankaEVCaseStudy project={project} />;
+  if (project.slug === "mensa-web-application") return <MensaCaseStudy project={project} />;
+  if (project.slug === "ceylon-luxury-living") return <CeylonLuxuryCaseStudy project={project} />;
+  if (project.slug === "green-light-solar-lanka") return <GreenLightSolarCaseStudy project={project} />;
 
   return (
     <main className="project-detail-page">
@@ -35,8 +41,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             {project.github && <a href={project.github} target="_blank" rel="noreferrer"><i className="fa-brands fa-github" /> Repository</a>}
           </div>
         </div>
-        <div className="project-detail-visual">
-          {project.image ? <Image src={project.image} alt={`${project.title} logo`} /> : <i className={project.icon} aria-hidden="true" />}
+        <div className={`project-detail-visual${project.image ? " project-detail-cover-visual" : ""}`}>
+          {project.image ? <Image src={project.image} alt={`${project.title} project preview`} fill priority sizes="(max-width: 900px) 100vw, 46vw" /> : <i className={project.icon} aria-hidden="true" />}
         </div>
       </header>
       <section className="project-detail-content">

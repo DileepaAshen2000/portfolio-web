@@ -23,7 +23,7 @@ export default function ContactSection() {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_id_here",
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_id_here",
-        { from_name: formState.name, to_name: "Ashen Edussuriya", from_email: formState.email, subject: formState.subject, message: formState.message, reply_to: formState.email, to_email: "dileepaashen81@gmail.com" },
+        { from_name: formState.name, to_name: "Dileepa Ashen", from_email: formState.email, subject: formState.subject, message: formState.message, reply_to: formState.email, to_email: "dileepaashen81@gmail.com" },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "public_key_here"
       );
       setStatus("sent");

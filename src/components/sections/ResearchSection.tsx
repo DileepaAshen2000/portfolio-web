@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import researchImage from "@/logos/Research.png";
 
 const methods = ["Python", "Machine Learning", "NLP", "Transformers", "Data Analysis", "Deep Learning"];
 
@@ -23,7 +25,8 @@ export default function ResearchSection() {
         <div className="portfolio-container">
           <div className="research-filter"><span>University Final Year Research</span></div>
           <motion.article className="research-card" initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }} transition={{ duration: .6 }}>
-            <div className="research-visual">
+            <div className="research-visual research-image-visual">
+              <Image src={researchImage} alt="Sinhala hate speech detection research dashboard" fill sizes="(max-width: 900px) 100vw, 41vw" />
               <div className="research-language" aria-hidden="true">සිංහල</div>
               <i className="fa-solid fa-brain" aria-hidden="true" />
               <div className="research-nodes" aria-hidden="true"><i /><i /><i /><i /><i /></div>
