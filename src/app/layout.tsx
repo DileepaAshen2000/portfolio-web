@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ashen Edussuriya | Software Engineer & Full-Stack Developer",
+  title: "Dileepa Ashen | Software Engineer & Full-Stack Developer",
   description:
     "Software Engineer — Designing and building scalable, high-performance digital systems. University of Moratuwa undergraduate, full-stack developer, and startup co-founder.",
   keywords: [
-    "Ashen Edussuriya",
+    "Dileepa Ashen",
     "Software Engineer",
     "Full-Stack Developer",
     "React",
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     "University of Moratuwa",
     "Portfolio",
   ],
-  authors: [{ name: "Ashen Edussuriya" }],
+  authors: [{ name: "Dileepa Ashen" }],
   openGraph: {
-    title: "Ashen Edussuriya | Software Engineer & Full-Stack Developer",
+    title: "Dileepa Ashen | Software Engineer & Full-Stack Developer",
     description:
       "Software Engineer — Building impactful digital systems with a focus on scalable architecture and seamless user experiences.",
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashen Edussuriya | Software Engineer",
+    title: "Dileepa Ashen | Software Engineer",
     description:
       "Software Engineer — Building impactful digital systems.",
   },

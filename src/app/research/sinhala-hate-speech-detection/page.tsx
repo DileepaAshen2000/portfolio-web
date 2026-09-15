@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import researchImage from "@/logos/Research.png";
 
 export const metadata: Metadata = {
-  title: "Sinhala Hate Speech Detection Research | Ashen Edussuriya",
-  description: "Automated detection and trend analysis of Sinhala hate speech, including Ashen Edussuriya's Module 02 hybrid-fusion detection contribution.",
+  title: "Sinhala Hate Speech Detection Research | Dileepa Ashen",
+  description: "Automated detection and trend analysis of Sinhala hate speech, including Module 02 hybrid-fusion detection contribution.",
 };
 
 const modules = [
@@ -46,6 +48,7 @@ export default function ResearchDetailPage() {
           <div className="research-detail-tags"><small>Natural Language Processing</small><small>Machine Learning</small><small>Explainable AI</small><small>Time-Series Analysis</small></div>
         </div>
         <div className="research-detail-hero-art" aria-hidden="true"><span>සිංහල</span><i className="fa-solid fa-brain" /><div><i /><i /><i /><i /></div></div>
+        <div className="research-detail-hero-image"><Image src={researchImage} alt="Sinhala hate speech detection research dashboard" fill priority sizes="(max-width: 900px) 100vw, 46vw" /></div>
       </header>
 
       <section className="research-overview">

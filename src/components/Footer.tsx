@@ -17,7 +17,7 @@ export default function Footer() {
       <motion.div className="footer-frame compact-footer-frame" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }}>
         <div className="compact-footer-main">
           <div className="compact-footer-profile">
-            <div className="footer-brand"><span className="brand-mark" aria-hidden="true"><i /><i /></span><div><h2>Ashen Edussuriya</h2><p>Software Engineer</p></div></div>
+            <div className="footer-brand"><span className="brand-mark" aria-hidden="true"><i /><i /></span><div><h2>Dileepa Ashen</h2><p>Software Engineer</p></div></div>
             <p>Building scalable, impactful software solutions and turning complex problems into clean, thoughtful digital systems.</p>
             <a href="/Ashen_Resume.pdf" target="_blank" rel="noreferrer" className="compact-resume-link">Download resume <span aria-hidden="true">↗</span></a>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom compact-footer-bottom">
-          <p>© {currentYear} Ashen Edussuriya. All rights reserved.</p>
+          <p>© {currentYear} Dileepa Ashen. All rights reserved.</p>
           {/* <p><i className="fa-solid fa-heart" /> Built with passion and purpose</p> */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><i className="fa-solid fa-arrow-up" />Back to top</button>
         </div>
